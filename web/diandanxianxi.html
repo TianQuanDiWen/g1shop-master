@@ -1,0 +1,78 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>电子商城</title>
+<link href="styles/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  <div id="head">
+      
+
+
+<script type="text/javascript">
+	function checkLogin(){//判断是否是汉字、字母、数字组成
+				var user = document.getElementById("hidden").value;
+				if(user == null || user ==""){
+					alert("您尚未登录，请先登录！");
+				}				
+			}
+</script>
+<div id="head">
+	<input type="hidden" name="loginInfo" value="com.shop.web.common.UserInfo@18192b6" id="hidden"/>
+	<input type="hidden" name="loginInfo" value="" id="loginInfo"/>
+    <div class="banner">
+     
+     
+     		<marquee><p style="font-size:14px;color:orange;text-align:center;">欢迎您!caoqing</p></marquee>
+     
+     </div>
+    <div class="nav"><a href="index.jsp">首页</a> | <a href="huiyuan.html" >会员资料修改</a> | <a href="gouwuche.html" >购物车</a> | <a href="chankan.html" >查看订单</a> | <a href="manage1.html">后台管理</a> </div>
+  </div>
+  </div>
+  <div id="content">
+    <div class="cartDet">
+    <div class="order_bg">
+    <h4>订单详细信息</h4>
+        <div style="width:500px;height:300px;margin:10px auto;">
+                	<p>会员姓名： caoqing</p>                	
+                	<p>订 单 号：201007200000</p>
+                	<p>收 件 人： caoqing</p>
+                	<p>收件地址：??</p>
+                	<p>邮政编码： 45000</p>
+                	<p>收件电话：15136289598</p>
+                	<p>备&nbsp;&nbsp;&nbsp;&nbsp;注： ????</p>
+            <table width="400" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="50%" >商品名称</td>
+                <td width="25%" >单&nbsp;&nbsp;价</td>
+                <td width="25%" >数&nbsp;&nbsp;量</td>
+              </tr>
+                            
+              <tr>
+                <td>杯子</td>
+                <td>50.0</td>
+                <td>2</td>
+              </tr>
+                            
+              <tr>
+                <td>玫瑰</td>
+                <td>100.0</td>
+                <td>1</td>
+              </tr>
+                                
+            </table>
+             <p class="ali_center">
+               <img src="images/29.gif" onclick="window.location.href='chankan.html'" style="border:0; cursor:hand"/>
+             </p>     
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
+

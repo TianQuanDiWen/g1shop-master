@@ -1,0 +1,637 @@
+@charset "utf-8";
+
+/* CSS Document */
+body,
+ul,
+li {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100%;
+	font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+	
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.topbar {
+	/* border: 1px solid black; */
+	background-color: #333;
+	height: 40px;
+}
+
+.topbar a {
+	color: #b0b0b0;
+	font-size: 12px;
+}
+
+.topbar a:hover {
+	color: #fff;
+}
+
+.container {
+	/* border: 1px solid black; */
+	margin: 0 auto;
+	width: 1226px;
+}
+
+.topbar-nav {
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	font-size: 0;
+
+}
+
+.topbar-nav span {
+	font-size: 12px;
+	color: #424242;
+	font-family: sans-serif;
+	margin: 0.5em;
+}
+
+.container::before,
+.container::after,
+.clearfix::before,
+.clearfix::after {
+	content: "";
+	display: table;
+}
+
+.container::after,
+.clearfix::after {
+	clear: both;
+}
+
+.topbar-info,
+.topbar-cart {
+	float: right;
+}
+
+.topbar-cart a {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	width: 120px;
+	background-color: #424242;
+}
+
+.topbar-cart a:hover {
+	background-color: #fff;
+	color: #ff6700;
+}
+
+.topbar-cart span {
+	margin-left: -4px;
+	font-size: 12px;
+}
+
+.topbar-cart i {
+	font-size: 20px;
+	line-height: 20px;
+	margin-top: 4px;
+	vertical-align: -4px;
+}
+
+.topbar-info {
+	margin-right: 15px;
+}
+
+.topbar-info a {
+	float: left;
+	padding: 0 5px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.topbar-info span {
+	float: left;
+	font: sans-serif;
+	font-size: 12px;
+	color: #424242;
+	line-height: 40px;
+	height: 40px;
+}
+
+.topbar-info .sep {
+	padding: 0 10px;
+}
+
+.header {
+	height: 100px;
+
+}
+
+.header-container {
+	/* border: 1px solid black;
+	background-color: #333;
+	height: 40px; */
+	margin: 0 auto;
+	width: 1226px;
+}
+
+.header-logo a {
+	display: block;
+	width: 55px;
+	height: 55px;
+}
+
+.header-logo {
+	float: left;
+	width: 62px;
+	margin-top: 22px;
+	height: 55px;
+}
+
+.header-nav {
+	float: left;
+	width: 820px;
+	height: 100px;
+}
+
+.header-search {
+	float: right;
+	height: 50px;
+	margin-top: 25px;
+	width: 296px;
+}
+
+.header-logo .lr {
+	text-align: left;
+}
+
+.header-nav .nav-list .nav-category {
+	float: left;
+	width: 127px;
+	padding: 0 15px 0 0;
+}
+
+.header-nav .nav-list .nav-category a {
+	display: block;
+	text-align: right;
+	padding: 26px 0 38px;
+	color: #333;
+}
+
+/* 导航*/
+.header-nav .nav-list {
+	width: 820px;
+	height: 88px;
+	font-size: 16px;
+	padding: 12px 0 0 60px;
+}
+
+.header-nav .nav-list .nav-item {
+	float: left;
+}
+
+.header-nav .nav-list .nav-item a {
+	display: block;
+	padding: 26px 10px 38px;
+	color: #333;
+}
+
+.header-nav .nav-list .nav-item a:hover {
+	color: #FF6700;
+}
+
+.header-search .search-form {
+	position: relative;
+	display: block;
+	width: 296px;
+	height: 50px;
+}
+
+.header-search .search-form .search-text {
+	position: absolute;
+	top: 0;
+	right: 51px;
+	display: block;
+	width: 245px;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid #e0e0e0;
+	outline: 0;
+}
+
+.header-search .search-form .search-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 52px;
+	height: 50px;
+	border: 1px solid #e0e0e0;
+	font-size: 24px;
+	line-height: 24px;
+	color: #616161;
+	outline: 0;
+	background-color: #fff;
+
+}
+
+.header-search .search-form .search-btn:hover {
+	background-color: #FF6700;
+	color: #fff;
+}
+
+/* .seckill */
+.seckill {
+	background-color: #f5f5f5;
+}
+
+.seckill-head {
+	height: 170px;
+	margin-top: 19px;
+	background: url(../img/bt.jpg) no-repeat 50%;
+}
+
+.seckill-nav {
+	margin: -68px 0 22px;
+}
+
+.seckill-nav ul {
+	height: 68px;
+	background: #414141;
+}
+
+.seckill-nav li {
+	display: block;
+	float: left;
+	color: #fff;
+	width: 20%;
+	height: 68px;
+	line-height: 68px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.seckill-nav li em {
+	display: inline-block;
+	margin-left: 30px;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 1;
+	vertical-align: middle;
+}
+
+.seckill-nav li span {
+	display: inline-block;
+	text-align: left;
+	margin-left: 15px;
+	line-height: 1;
+	vertical-align: middle;
+	font-size: 14px;
+}
+
+.seckill-nav .active1 {
+	background-color: #F1393a;
+}
+
+.seckill-container {
+	/* border: 1px solid black; */
+	margin: 0 auto;
+	width: 1226px;
+}
+.seckill-nav ul li:hover {
+	color: #ff6700;
+}
+.seckill-nav ul .active1:hover {
+	color:black;
+}
+.seckill-nav ul li span em {
+	display: inline-block;
+	font-size: 14px;
+	margin-left: 0;
+	font-style: normal;
+	text-align: left;
+	line-height: 20px;
+}
+
+.seckill-goods ul {
+	/* border: 1px solid black; */
+	margin-right: -13px;
+}
+
+.seckill-goods li {
+	float: left;
+	width: 400px;
+	height: 190px;
+	background-color: #fff;
+	margin-right: 13px;
+	margin-bottom: 13px;
+}
+
+.seckill-notice {
+	font-size: 12px;
+	color: #999;
+	margin-top: 100px;
+	padding-bottom: 35px;
+}
+
+.seckill-goods .bg {
+	float: left;
+	width: 190px;
+	height: 190px;
+	/* border: 1px solid black; */
+}
+
+.seckill-goods .info {
+	margin-left: 210px;
+	width: 190px;
+	height: 190px;
+	/* border: 1px solid black; */
+	padding-top: 30px;
+}
+
+.seckill-goods .bg img {
+	height: 190px;
+}
+
+.seckill-goods .info .name {
+	font-size: 16px;
+	color: #333;
+	height: 16px;
+	line-height: 16px;
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.seckill-goods .info .tips {
+	font-size: 12px;
+	line-height: 12px;
+	color: #b0b0b0;
+	margin-top: 10px;
+}
+
+.seckill-goods .info .price {
+	font-size: 16px;
+	line-height: 16px;
+	color: #F1393A;
+	margin-top: 14px;
+	margin-bottom: 0;
+}
+
+.seckill-goods .info .price del {
+	color: #999;
+	font-size: 12px;
+	line-height: 12px;
+	margin-left: 10px;
+}
+
+.seckill-goods .info .btn {
+	display: inline-block;
+	width: 118px;
+	height: 28px;
+	font-size: 14px;
+	color: #fff;
+	line-height: 28px;
+	text-align: center;
+	background-color: #F1393A;
+	margin-top: 19px;
+	border: 1px solid #F1393A;
+}
+
+.seckill-goods .info .person {
+	font-size: 12px;
+	line-height: 12px;
+	color: #999;
+	margin-top: 10px;
+}
+
+
+.navigation ul {
+	margin: -13px;
+}
+
+.navigation-nav {
+	height: 52px;
+}
+
+.navigation-nav li {
+	display: block;
+	float: left;
+	background-color: #fff;
+	height: 68px;
+	width: 20%;
+	line-height: 68px;
+	text-align: center;
+	cursor: pointer;
+	color: #999;
+}
+
+.navigation-nav a {
+	font-size: 16px;
+	text-align: center;
+	line-height: 16px;
+	color: #616161;
+}
+
+.navigation-nav a:hover {
+	color: #FF6700;
+}
+
+.navigation-about {
+	display: block;
+	padding: 40px 0;
+	height: 100px;
+	margin-left: 13px;
+	margin-top: 12px;
+}
+
+.navigation-about ul {
+	float: left;
+	width: 15%;
+}
+
+.navigation-sss bt {
+	margin: -1px 0 26px;
+	font-size: 14px;
+	line-height: 1.25;
+	color: #424242;
+	padding-bottom: 26px;
+}
+
+.navigation-sss li {
+	margin: 10px 0 0;
+	font-size: 12px;
+	    cursor: pointer;
+}
+
+.navigation-sss a {
+	color: #757575;
+	font-size: 14px;
+
+}
+
+.navigation-sss a:hover {
+	color: #FF6700;
+}
+
+.navigation-omn a {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	width: 120px;
+	background-color: #fff;
+	border: 1px solid #FF6700;
+	color: #FF6700;
+}
+
+.navigation-omn a:hover {
+	background-color: #ff6700;
+	color: #fff;
+}
+
+.navigation-omn .dh {
+	margin: 0 0 5px;
+	font-size: 22px;
+	line-height: 1;
+	color: #ff6700;
+}
+
+.navigation-omn .time {
+	margin: 0 0 16px;
+	font-size: 12px;
+	display: block;
+}
+
+.navigation-omn .xm {
+	display: block;
+	font-size: 12px;
+	margin-top: 15px;
+	position: relative;
+
+}
+
+.xo {
+	background-color: #F5F5F5;
+	width: 1251px;
+	padding-left: 267px;
+	/* margin-right: auto;
+	margin-left: auto; */
+	padding-top: 30px;
+}
+
+.xo .set {
+	float: left;
+	margin: 0;
+	line-height: 18px;
+}
+
+.Xiaomi .logo {
+	width: 57px;
+	height: 57px;
+	margin-right: 10px;
+	background: url(../img/logo-footer.png) no-repeat 50% 50%;
+	position: absolute;
+}
+
+.Xiaomi .rl {
+	display: block;
+	text-align: left;
+	text-indent: -9999em;
+	overflow: hidden;
+}
+
+.infomm {
+	float: left;
+	display: block;
+	color: #b0b0b0;
+	padding-left: 67px;
+}
+
+.infomm a {
+	font-size: 12px;
+	line-height: 12px;
+	color: #757575;
+}
+
+.infomm a:hover {
+	color: #FF6700;
+}
+
+.infomm span {
+	margin: 0.25em;
+	font-family: sans-serif;
+	color: #b5b5b5;
+}
+
+.Xiaomi-moc {
+	margin: 0;
+	float: left;
+	line-height: 18px;
+    padding-left: 58px; 
+	text-align: left;
+	margin-top: 5px;
+}
+
+.Xiaomi-moc p{
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	
+	color: #B0B0B0;
+}
+
+.Xiaomi-moc a {
+	font-size: 12px;
+	color: #B0B0B0;
+}
+
+.Xiaomi-moc a:hover {
+	color: #FF6700;
+}
+.Xiaomi-moc span
+{
+	font-size: 12px;
+	color: #B0B0B0;
+}
+
+
+.xo-img
+{
+	    background-color: #F5F5F5;
+	    height: 28px;
+		width: 1151px;
+	    padding-left: 367px;
+		padding-top: 12px;
+}
+.xo-img img
+{
+    height: 28px;
+    margin-left: 0px;
+}
+.sol
+{
+	    clear: both;
+	    margin:0;
+	    width: 100%;
+		background-color: #F5F5F5;
+		
+	    /* background: url(../img/slogan2020.png) no-repeat center 0; */
+		
+}
+.sol img
+{
+	
+      align-content: center;
+      padding-left: 667px;
+	  text-align: center;
+	  padding-top: 12px;
+	  
+}

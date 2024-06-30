@@ -1,0 +1,52 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>电子商城</title>
+<link href="styles/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  
+
+
+<script type="text/javascript">
+	function checkLogin(){//判断是否是汉字、字母、数字组成
+				var user = document.getElementById("hidden").value;
+				if(user == null || user ==""){
+					alert("您尚未登录，请先登录！");
+				}				
+			}
+</script>
+<div id="head">
+	<input type="hidden" name="loginInfo" value="com.shop.web.common.UserInfo@18192b6" id="hidden"/>
+	<input type="hidden" name="loginInfo" value="" id="loginInfo"/>
+    <div class="banner">
+     
+     
+     		<marquee><p style="font-size:14px;color:orange;text-align:center;">欢迎您!caoqing</p></marquee>
+     
+     </div>
+    <div class="nav"><a href="index.html">首页</a> | <a href="huiyuan.html" >会员资料修改</a> | <a href="gouwuche.html" >购物车</a> | <a href="chankan.html" >查看订单</a> | <a href="manage1.html">后台管理</a> </div>
+  </div>
+  <div id="content">
+    <h3>&nbsp;</h3>     
+    <ul class="ul_list"> 
+        <li>
+         <span><img src="images/goods/coffeeCup.jpg" /></span>
+         <span>杯子</span>
+         <span>单价：50.0</span>
+         <span>商品简介:做工精细,高档茶杯</span>
+         <span><br/><img src="images/33.gif" alt="订购" onclick="window.location.href='dinggou.html'" style="border:0; cursor:hand;"/>&nbsp; 
+         	<img src="images/29.gif" alt="返回" onclick="window.location.href='index.html'"  style="border:0; cursor:hand;"/>
+         </span>
+         </li>
+    </ul>   
+    <div class="clear"></div>
+  </div>  
+</div>
+</body>
+</html>

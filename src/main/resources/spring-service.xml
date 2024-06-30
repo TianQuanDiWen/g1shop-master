@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="com.soft.service"/>
+
+    <bean id="UserServiceImpl" class="com.soft.service.Impl.UserServiceImpl">
+        <property name="userMapper" ref="userMapper"></property>
+    </bean>
+
+    <bean id="OrderServiceImpl" class="com.soft.service.Impl.OrderServiceImpl">
+        <property name="orderMapper" ref="orderMapper"></property>
+    </bean>
+
+    <bean id="OrderItemServiceImpl" class="com.soft.service.Impl.OrderItemServiceImpl">
+        <property name="orderItemMapper" ref="orderItemMapper"></property>
+    </bean>
+
+    <bean id="GoodsServiceImpl" class="com.soft.service.Impl.GoodsServiceImpl">
+        <property name="goodsMapper" ref="goodsMapper"></property>
+    </bean>
+
+    <bean id="CartServiceImpl" class="com.soft.service.Impl.CartServiceImpl">
+        <property name="cartMapper" ref="cartMapper"></property>
+    </bean>
+
+    <bean id="transactionMapper" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+    <tx:advice id="txAdvice" transaction-manager="transactionMapper">
+        <tx:attributes>
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <aop:pointcut id="txPointCut" expression="execution(* com.soft.dao.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
+    </aop:config>
+</beans>

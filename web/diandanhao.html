@@ -1,0 +1,52 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>电子商城</title>
+<link href="inc/style.css" rel="stylesheet" type="text/css" />
+<link href="styles/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+  
+
+
+<script type="text/javascript">
+	function checkLogin(){//判断是否是汉字、字母、数字组成
+				var user = document.getElementById("hidden").value;
+				if(user == null || user ==""){
+					alert("您尚未登录，请先登录！");
+				}				
+			}
+</script>
+<div id="head">
+	<input type="hidden" name="loginInfo" value="com.shop.web.common.UserInfo@18192b6" id="hidden"/>
+	<input type="hidden" name="loginInfo" value="" id="loginInfo"/>
+    <div class="banner">
+     
+     
+     		<marquee><p style="font-size:14px;color:orange;text-align:center;">欢迎您!caoqing</p></marquee>
+     
+     </div>
+   <div class="nav"><a href="index.jsp">首页</a> | <a href="huiyuan.html" >会员资料修改</a> | <a href="gouwuche.html" >购物车</a> | <a href="chankan.html" >查看订单</a> | <a href="manage1.html">后台管理</a> </div>
+  </div>
+   <div id="content">
+    <div class="userinfo" style="background:url(images/38.gif) no-repeat;">
+      <ul>
+      	<li>
+      		 您的订单号：<font style="color:red;">201007200001</font>
+       	</li>
+         </ul>
+         <div class="button_img">
+        <center><a href="index.html">继续购物</a> 
+        </center>
+            
+       </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

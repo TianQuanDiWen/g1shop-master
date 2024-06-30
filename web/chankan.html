@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>电子商城</title>
+	<link href="styles/style.css" rel="stylesheet" type="text/css" />
+	<script type="application/javascript" src="js/jquery-3.4.1.js"></script>
+	<script type="application/javascript">
+		$(function () {
+			$.ajax({
+				url: "getAllOrder",
+				type: "get",
+				dataType: "json",
+				success: function (result) {
+					var msg = JSON.stringify(result);
+					var msg = JSON.parse(msg);
+					var s = "";
+					$.each(msg, function (n, i) {
+						s += '<tr><td contenteditable="true"> ' + i.orderId + '</td> \
+                         <td contenteditable="true">' + i.goodsNum + '</td>\
+                         <td contenteditable="true">' + i.orderReceiver + '</td>\
+                         <td contenteditable="true">' + i.payment + '</td>\
+                         <td contenteditable="true">' + i.transType + '</td>\
+                         <td contenteditable="true">' + i.date + '</td>\
+                         <td ><a href="javascript:;" class="save_a" >保存|</a>\
+                         <a href="javascript:;" class="del_a" onclick="del_customer(' + i.ID + ')">删除</a>\
+                         </td></tr>';
+						$("#resultOrder").append(s);
+					})
+				}
+			})
+		})
+
+
+		function dateFormatFn(date,format='YYYY-MM-DD'){
+			let config = {
+				YYYY:date.getFullYear(),
+				MM:date.getMonth()+1 >10?date.getMonth()+1:'0'+(date.getMonth()+1),
+				DD:date.getDate(),
+			}
+			for(const key in config){
+				format = format.replace(key,config[key])
+			}
+			return format
+		}
+	</script>
+</head>
+
+<body>
+<div id="container">
+	<div id="head">
+
+		<script type="text/javascript">
+			function checkLogin() { //判断是否是汉字、字母、数字组成
+				var user = document.getElementById("hidden").value;
+				if (user == null || user == "") {
+					alert("您尚未登录，请先登录！");
+				}
+			}
+
+			function tuihuo() {
+				window.open("tuihuo.html", "", "width=600,height=600,top=250,left=300");
+			}
+
+			function tuikuan() {
+				alert("您确定要退款吗");
+			}
+		</script>
+		<div id="container">
+
+			<script type="text/javascript">
+				function checkLogin() { //判断是否是汉字、字母、数字组成
+					var user = document.getElementById("hidden").value;
+					if (user == null || user == "") {
+						alert("您尚未登录，请先登录！");
+					}
+				}
+			</script>
+
+			<header>
+
+				<div class="nav-bg">
+					<div class="container">
+
+						<ul class="nav-top">
+
+							<li><a href="gouwuche.html"><i class="iconfont" >&#xe623;</i>购物车0件</a></li>
+
+							<li id="gundong">您 的 满 意 是 我 们 最 大 的 幸 福， 祝 你 购 物 愉 快!</li>
+
+							<li style="float: left;">有 问 题 请 您 及 时 拨 打 24 小 时 服 务 热 线 4 0 0 8 0 0 6 0 0</li>
+						</ul>
+						<b>  <a > 会员等级 <img src="images/baijin.png"/></a></b>
+					</div>
+				</div>
+				<div class="container">
+
+					<marquee width="500px" style="float: left;">
+						<p style="font-size:30px;color:orange; margin-top: 22px;">欢迎您!caoqing</p>
+					</marquee>
+
+				</div>
+
+			</header>
+			<div class="nav">
+				<div class="container">
+					<a href="index.html">首页</a> |
+					<a href="huiyuan.html">会员资料修改</a> |
+					<a href="gouwuche.html">购物车</a> |
+					<a href="chankan.html">查看订单</a> |
+					<a href="manage1.html">后台管理</a> |
+					<a href="denglu.html">会员登录</a>
+
+				</div>
+			</div>
+			<div id="content">
+
+				<div class="cartDet">
+					<div class="order_bg">
+						<h4>查看订单</h4>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" id="resultOrder">
+							<tr>
+								<th scope="col" width="15%">订单号</th>
+								<th scope="col" width="10%">品种数</th>
+								<th scope="col" width="10%">收件人</th>
+								<th scope="col" width="10%">付款方式</th>
+								<th scope="col" width="20%">运送方式</th>
+								<th scope="col" width="20%">订货日期</th>
+								<th scope="col" width="20%">操作</th>
+							</tr>
+
+							<tr>
+								<td><a href="diandanxianxi.html">201007200000</a>
+								</td>
+								<td>2</td>
+								<td>caoqing</td>
+								<td>??</td>
+								<td>????</td>
+								<td>2010-07-20</td>
+								<td><a href="javascript:tuihuo()">退货</a> <a href="javascript:tuikuan()">退款</a></td>
+							</tr>
+
+							<tr>
+								<td><a href="diandanxianxi.html">201007200001</a>
+								</td>
+								<td>1</td>
+								<td>t</td>
+								<td>t</td>
+								<td>t</td>
+								<td>2010-07-20</td>
+								<td>退货 退款</td>
+							</tr>
+
+						</table>
+						<p class="ali_center">
+
+							首页 上一页 | 下一页 尾页
+
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+<script type="text/javascript">
+
+
+	function gundong(){
+		var div=document.getElementById("gundong")
+		var txt=div.innerHTML;
+
+		var arr=txt.split("");//把字符串变成数组
+
+		console.log(arr)
+
+		var first=arr.shift(); //删除数组里
+		console.log(first)
+
+		arr.push(first);
+		console.log(arr)
+		txt=arr.join("")
+
+		div.innerHTML=txt
+		console.log(txt);
+	}
+
+	setInterval(gundong,500)
+</script>
+</html>

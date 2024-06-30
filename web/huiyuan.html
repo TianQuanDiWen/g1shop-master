@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>电子商城</title>
+		<link href="inc/style.css" rel="stylesheet" type="text/css" />
+		<link href="styles/style.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<div id="container">
+
+			<script type="text/javascript">
+				function checkLogin() { //判断是否是汉字、字母、数字组成
+					var user = document.getElementById("hidden").value;
+					if (user == null || user == "") {
+						alert("您尚未登录，请先登录！");
+					}
+				}
+
+				function updateUser() {
+					$.ajax({
+
+					})
+				}
+			</script>
+
+			<header>
+
+				<div class="nav-bg">
+					<div class="container">
+
+						<ul class="nav-top">
+
+							<li><a href="gouwuche.html"><i class="iconfont" >&#xe623;</i>购物车0件</a></li>
+
+							<li id="gundong">您 的 满 意 是 我 们 最 大 的 幸 福， 祝 你 购 物 愉 快!</li>
+
+							<li style="float: left;">有 问 题 请 您 及 时 拨 打 24 小 时 服 务 热 线 4 0 0 8 0 0 6 0 0</li>
+						</ul>
+						<b>  <a > 会员等级 <img src="images/zuanshi.png"/></a></b>
+					</div>
+				</div>
+				<div class="container">
+
+					<marquee width="500px" style="float: left;">
+						<p style="font-size:30px;color:orange; margin-top: 22px;">欢迎您!caoqing</p>
+					</marquee>
+
+				</div>
+
+			</header>
+			<div class="nav">
+				<div class="container">
+					<a href="index.jsp">首页</a> |
+					<a href="huiyuan.html">会员资料修改</a> |
+					<a href="gouwuche.html">购物车</a> |
+					<a href="chankan.html">查看订单</a> |
+					<a href="manage1.html">后台管理</a> |
+					<a href="login1.jsp">会员登录</a> |
+					<a href="register1.jsp">会员注册</a>
+
+				</div>
+			</div>
+
+			<div id="content">
+				<div class="userinfo">
+					<div>
+						<font class="red"></font>
+					</div>
+
+					<form id="memberModify_action" name="memberRegisterForm" onsubmit="return true;" action="" method="post">
+						<input type="hidden" name="member.id" value="3" id="member_id" />
+						<ul>
+							<li><span>用户名：</span><input type="text" name="member.username" value="caoqing" id="member_username" />
+								<font class="red"> *</font>
+							</li>
+							<li><span>真实姓名：</span><input type="text" name="member.realname" value="caoqing" id="member_realname" />
+								<font class="red"> *</font>
+							</li>
+							<li style="width:100%"><span>原密码：</span><input type="password" name="member.password" id="member_password" />
+								<font class="red"> *</font>
+
+							</li>
+
+							<li><span>新密码：</span><input type="password" name="newpassword" id="newpassword" />
+								<font class="red">*</font>
+
+							</li>
+							<li><span>确认新密码：</span><input type="password" name="renewpassword" id="renewpassword" />
+								<font class="red"> *</font>
+							</li>
+							<li><span>所在城市：</span><input type="text" name="member.city" value="??" id="member_city" />
+								<li><span>联系地址：</span><input type="text" name="member.address" value="??863???" id="member_address" />
+									<li><span>邮政编码：</span><input type="text" name="member.postcode" value="450000" id="member_postcode" />
+										<li><span>证件号码：</span><input type="text" name="member.cardno" value="410521198406136533" id="member_cardno" />
+											<font class="red"> *</font>
+										</li>
+										<li><span>证件类别：</span><input type="radio" name="member.cardtype" id="member_cardtype身份证" value="身份证" /><label for="member_cardtype身份证">身份证</label>
+											<input type="radio" name="member.cardtype" id="member_cardtype军官证" value="军官证" /><label for="member_cardtype军官证">军官证</label>
+											<input type="radio" name="member.cardtype" id="member_cardtype学生证" value="学生证" /><label for="member_cardtype学生证">学生证</label>
+
+										</li>
+										<li><span>联系电话：</span><input type="text" name="member.tel" value="15136289598" id="member_tel" />
+											<li><span>Email:</span><input type="text" name="member.email" value="caoq@163.com" id="member_email" />
+												<font class="red"> *</font>
+											</li>
+											<li class="button_img">
+												<img src="images/12.gif" onclick="document.memberRegisterForm.submit();" style="CURSOR:hand" />
+												<img src="images/13.gif" onclick="document.memberRegisterForm.reset();" style="CURSOR:hand" />
+											</li>
+						</ul>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

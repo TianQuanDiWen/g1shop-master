@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册界面</title>
+    <link rel="stylesheet" type="text/css" href="css/Sytel.css" />
+    <link rel="stylesheet" type="text/css" href="css/register.css" />
+    <script src="${pageContext.request.contextPath}/js/jquery-3.4.1.js"></script>
+
+    <script type="text/javascript">
+        function checkLogin() { //判断是否是汉字、字母、数字组成
+            var user = document.getElementById("hidden").value;
+            if (user == null || user == "") {
+                alert("您尚未登录，请先登录！");
+            }
+        }
+
+        function register() {
+            var username = $("#member_username").val();
+            var password = $("#renewpassword").val();
+            var actualName = $("#member_realname").val();
+            var city = $("#member_city").val();
+            var address = $("#member_address").val();
+            var postCode = $("#member_postcode").val();
+            var licenceNum = $("#member_cardno").val();
+            var licenceType = $('input[type=radio][name=member_cardtype]:checked').val();
+            var phone = $("#member_tel").val();
+            var email = $("#member_email").val();
+
+            $.ajax({
+                url:"${pageContext.request.contextPath}/user/register",
+                type:"post",
+                dataType : "JSON",
+                contentType:"application/x-www-form-urlencoded",
+                data:{
+                    "username":username,"password":password,"actualName":actualName,"city":city,
+                    "address":address,"postCode":postCode,"licenceNum":licenceNum,"licenceType":licenceType,
+                    "phone":phone,"email":email
+                } ,
+                success:function (result){
+                    if(result === "false"){
+                        alert("注册失败！");
+                    } else {
+                        window.location.href="login1.jsp";
+                        alert("注册成功！");
+                    }
+                }
+            })
+        }
+    </script>
+    <body>
+        <div class="header">
+        </div>
+       <div class="navigation">
+   
+           <div class="navigation--head">
+   
+               <div class="seckill-container">
+                   <div class="rg_layout">
+                       <div class="rg_left">
+                           <p>新用户注册</p>
+                           <p>USER REGISTER</p>
+                       </div>
+                       <div class="rg_center">
+                           <div class="rg_form">
+                               <form action="${pageContext.request.contextPath}/user" method="post">
+                               <input type ="hidden" name="method" value="regist" >
+                                   <table>
+                                       <tr><!--label 标签的作用是当点击文字也会跳到文本输出框-->
+                                           <!--for属性与ID属性对应规定 label 绑定到哪个表单元素。-->
+                                           <td class="td_left"><label for="username">用户名</label> </td>
+                                           <td class="td_right"><input type="text" name="username" id="username"> </td>
+                                       </tr>
+                                       <tr>
+                                           <td class="td_left"><label for="password">密码</label> </td>
+                                           <td class="td_right"><input type="password" name="password" id="password"> </td>
+                                       </tr>
+                                       <tr>
+                                           <td class="td_left"><label for="repeatpassword">确认密码</label> </td>
+                                           <td class="td_right"><input type="password" name="repeatpassword" id="repeatpassword"> </td>
+                                       </tr>
+                                       <tr><!--label 标签的作用是当点击文字也会跳到文本输出框-->
+                                           <td class="td_left"><label for="email">email</label> </td>
+                                           <td class="td_right"><input type="email" name="email" id="email"> </td>
+                                       </tr>
+                                       <tr>
+                                           <td class="td_left"><label for="name">姓名</label> </td>
+                                           <td class="td_right"><input type="text" name="name" id="name"> </td>
+                                       </tr>
+                                       
+                                       <tr>
+                                           <td class="td_left">性别</td>
+                                           <td class="td_right">
+                                               <input type="radio" name="sex" value="男">男
+                                               <input type="radio" name="sex" value="女">女
+                                           </td>
+                                       </tr>
+                                       <tr>
+                                           <td class="td_left"><label for="birthday">出生日期</label> </td>
+                                           <td class="td_right"><input type="date" name="birthday" id="birthday"> </td>
+                                       </tr>
+                                       <tr>
+                                           <td class="td_left"><label for="checkcode">验证码</label> </td>
+                                           <td class="td_right">
+                                               <input type="text" name="checkcode" id="checkcode">
+                                               <img src="image/verify_code.jpg" id="img_check">
+                                           </td>
+                                       </tr>
+                                       <tr>
+                                           <td colspan="2" align="center">
+                                               <input  type="submit" value="注册" id="btn_sub">
+                                           </td>
+                                       </tr>
+               
+                                   </table>
+                               </form>
+                           </div>
+                       </div>
+                       <div class="rg_right">
+                           <p>已有账号？<a href="${pageContext.request.contextPath}/user?method=loginUI">立即登录</a></p>
+                       </div>
+                   </div>
+                                       
+               </div>
+           </div>
+       </div>
+               
+               
+   </div>
+            
+          
+   </body>
+</html>
